@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: core_deal_summary
+    description: "Monthly summary of deals won by product and account."
+    columns:
+      - name: product
+        tests:
+          - not_null
+      - name: account
+        tests:
+          - not_null
+      - name: deal_month
+        tests:
+          - not_null
+      - name: total_close_value_usd
+        tests:
+          - not_null
