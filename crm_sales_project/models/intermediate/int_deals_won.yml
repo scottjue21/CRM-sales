@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: int_deals_won
+    description: "Aggregated won deals by product, account, and date."
+    tests:
+      - dbt_utils.recency:
+          arguments:
+            datepart: day
+            field: last_extracted_at
+            interval: 1
+    columns:
+      - name: opportunity_id
+        tests:
+          - not_null
+          - unique
+      - name: product
+        tests:
+          - not_null
+      - name: account
+        tests:
+          - not_null
+      - name: deal_date
+        tests:
+          - not_null
+      - name: close_value_usd
+        tests:
+          - not_null
+      - name: last_extracted_at
+        tests:
+          - not_null

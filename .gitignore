@@ -1,5 +1,26 @@
-# you shouldn't commit these into source control
-# these are the default directory names, adjust/add to fit your needs
-target/
-dbt_packages/
-logs/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environments
+.venv/
+venv/
+
+# dbt / project artifacts
+crm_sales_project/target/
+crm_sales_project/dbt_packages/
+crm_sales_project/logs/
+crm_sales_project/.python-version
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Airbyte / temp
+.airbyte/
+tmp/
