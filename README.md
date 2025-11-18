@@ -1,16 +1,16 @@
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph Source
-    hubspot["HubSpot CRM deals export CSV"]
+    gs["Google Sheets CRM Export (CSV)"]
   end
 
   subgraph Ingestion
-    airbyte["Airbyte (manual UI sync due to trial limits)"]
+    airbyte["Airbyte\n(Manual UI sync due to trial limits)"]
   end
 
   subgraph Snowflake
-    snowflake_raw["Snowflake RAW schema"]
-    snowflake_stg["Snowflake STG schema"]
+    raw["Snowflake RAW schema"]
+    stg["Snowflake STG schema"]
   end
 
   subgraph dbt
@@ -20,9 +20,8 @@ flowchart LR
   end
 
   subgraph Analytics
-    snowflake_analytics["Snowflake transformed tables"]
+    analytics["Snowflake transformed tables"]
   end
 
-  hubspot --> airbyte --> snowflake_raw --> snowflake_stg
-  snowflake_stg --> dbt_stg --> dbt_int --> dbt_core --> snowflake_analytics
+  gs --> airbyte --> raw --> stg --> dbt_stg --> dbt_int --> dbt_core --> analytics
 ```
