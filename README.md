@@ -112,5 +112,15 @@ Final analytical models include:
 - Product-level revenue performance
 - Pipeline conversion metrics
 
+## Next Steps
+Planned enhancements include:
+- Automating ingestion using the Airbyte API and Prefect flow triggering
+- Implementing data quality tests in dbt (e.g., not-null, unique, accepted values)
+- Adding a dbt docs site for data lineage and documentation
+- Building a BI dashboard on top of the core models (e.g., Tableau/Power BI)
+- Enhancing Snowflake roles and orchestration patterns
 
+## Who Am I?
+Hi, I’m Scott. I’m a data professional with 13+ years of experience turning complex, fragmented data into clear, decision-ready insights. With an MS in Data Science and a background in FP&A, I blend business context with analytics engineering to build scalable workflows, automate reporting, and improve data quality. I’m passionate about continuous learning and regularly build personal projects to deepen my skill set. I’m currently seeking new opportunities to tackle complex challenges and make an impact. I enjoy delivering solutions that are technically sound, strategically aligned, and genuinely useful—especially across analytics & data modeling, automation/ETL, and data quality/testing.
 
+**Let’s connect!** → **LinkedIn:** https://www.linkedin.com/in/scottjue
