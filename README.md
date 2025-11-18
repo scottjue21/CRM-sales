@@ -1,15 +1,28 @@
-Welcome to your new dbt project!
+```mermaid
+flowchart LR
+  subgraph Source
+    hubspot["HubSpot CRM deals export CSV"]
+  end
 
-### Using the starter project
+  subgraph Ingestion
+    airbyte["Airbyte (manual UI sync due to trial limits)"]
+  end
 
-Try running the following commands:
-- dbt run
-- dbt test
+  subgraph Snowflake
+    snowflake_raw["Snowflake RAW schema"]
+    snowflake_stg["Snowflake STG schema"]
+  end
 
+  subgraph dbt
+    dbt_stg["dbt staging models"]
+    dbt_int["dbt intermediate models"]
+    dbt_core["dbt core models"]
+  end
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+  subgraph Analytics
+    snowflake_analytics["Snowflake transformed tables"]
+  end
+
+  hubspot --> airbyte --> snowflake_raw --> snowflake_stg
+  snowflake_stg --> dbt_stg --> dbt_int --> dbt_core --> snowflake_analytics
+```
