@@ -88,3 +88,29 @@ flowchart LR
 
 **Note:** Since Airbyte Cloud free tier tokens are short-lived and API triggering is restricted, this project uses a **manual sync via the Airbyte UI**. In a full production environment, I would automate the ingestion step using the Airbyte API within Prefect to trigger extraction and loading programmatically.
 
+## Key Decisions & Roadblocks
+
+| **Challenge** | **Decision** | **Outcome** |
+|--------------|--------------|-------------|
+| Airbyte Cloud trial restricts API access | Performed manual UI-triggered syncs and commented out API automation code | Demonstrates intended production automation while keeping working functionality |
+| CSV export lacked standardized formatting | Created dbt staging models for renaming, type casting, and cleanup | Structured & query-ready dataset |
+| Need for reusable modeling | Implemented dbt layered approach (stg → int → core) | Scalable transformation structure |
+
+## Solution
+Final analytical models include:
+- **Core model**:
+  - `core_deal_summary` – Total revenue and count of deals won per product and month
+
+- **Intermediate models**:
+  - `int_deals_won` – Filters to won deals and prepares them for core aggregation
+
+- **Staging models**:
+  - `stg_crm_deals` – Renames columns, type-casts fields, and standardizes values
+
+### Insights enabled:
+- Win rate trends across time
+- Product-level revenue performance
+- Pipeline conversion metrics
+
+
+
