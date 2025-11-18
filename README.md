@@ -1,11 +1,12 @@
 ```mermaid
-flowchart TB
+flowchart LR
+
   subgraph Source
     gs["Google Sheets CRM Export (CSV)"]
   end
 
   subgraph Ingestion
-    airbyte["Airbyte\n(Manual UI sync due to trial limits)"]
+    airbyte["Airbyte (Manual UI sync due to trial limits)"]
   end
 
   subgraph Snowflake
@@ -20,8 +21,15 @@ flowchart TB
   end
 
   subgraph Analytics
-    analytics["Snowflake transformed tables"]
+    analytics["Analytics-ready transformed tables"]
   end
 
-  gs --> airbyte --> raw --> stg --> dbt_stg --> dbt_int --> dbt_core --> analytics
+  %% arrow flow outside subgraph blocks so titles stay clean
+  gs --> airbyte
+  airbyte --> raw
+  raw --> stg
+  stg --> dbt_stg
+  dbt_stg --> dbt_int
+  dbt_int --> dbt_core
+  dbt_core --> analytics
 ```
