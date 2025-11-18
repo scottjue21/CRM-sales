@@ -24,3 +24,5 @@ Thumbs.db
 # Airbyte / temp
 .airbyte/
 tmp/
+
+profiles.yml
