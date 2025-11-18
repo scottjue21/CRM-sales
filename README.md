@@ -5,6 +5,17 @@ The goal is to ingest raw CRM deal records, apply layered transformations, and p
 
 This project models a real-world workflow where raw operational data is centralized, standardized, and prepared for decision-making through automated data engineering patterns.
 
+## 🛠 Tech Stack
+
+**Orchestration:** Prefect  
+**Data Integration:** Airbyte (Cloud - manual sync)  
+**Transformation:** dbt Core  
+**Warehouse:** Snowflake  
+**Storage Format:** CSV  
+**Language:** Python  
+**Environment:** Cursor IDE / Virtualenv  
+**Version Control:** Git + GitHub
+
 ## Problem
 The CRM system exports deal records in a flat format that is not optimized for analytics.  
 
