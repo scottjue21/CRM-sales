@@ -149,7 +149,7 @@ def run_dbt_build():
     """
     op = DbtCoreOperation(
         commands=["dbt build"],
-        project_dir="crm_sales_project",  # relative to repo root
+        project_dir="dbt_crm_sales", 
         profiles_dir=".",                 # uses profiles.yml in repo root
     )
     return op.run()

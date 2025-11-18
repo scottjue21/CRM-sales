@@ -1,0 +1,26 @@
+crm_sales_project:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "IHXBIZR-EAB21995"
+      user: "DBT_USER"
+      password: "dbt123"
+      role: TRANSFORMER
+      database: DPS_ANALYTICS
+      warehouse: COMPUTE_WH
+      schema: SCOTT_DBT          # default schema for anything *without* +schema
+      threads: 8
+      client_session_keep_alive: false
+
+    prod:
+      type: snowflake
+      account: "IHXBIZR-EAB21995"
+      user: "DBT_USER"
+      password: "dbt123"
+      role: TRANSFORMER
+      database: DPS_ANALYTICS
+      warehouse: COMPUTE_WH
+      schema: STAGING            # base schema for prod builds
+      threads: 8
+      client_session_keep_alive: false
