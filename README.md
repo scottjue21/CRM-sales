@@ -1,4 +1,41 @@
-# Architecture Diagram
+# CRM Sales Pipeline — End-to-End ELT Workflow (Airbyte → Snowflake → dbt → Analytics)
+## Overview
+This project demonstrates an end-to-end modern data pipeline for CRM sales analytics using **Airbyte**, **Snowflake**, and **dbt**.  
+The goal is to ingest raw CRM deal records, apply layered transformations, and produce clean analytical tables for reporting and business insights.
+
+This project models a real-world workflow where raw operational data is centralized, standardized, and prepared for decision-making through automated data engineering patterns.
+
+## Problem
+The CRM system exports deal records in a flat format that is not optimized for analytics.  
+
+Key challenges include:
+- Inconsistent formatting and field structure
+- Manual data cleanup before analysis
+- Limited visibility into win rates and revenue trends
+- No repeatable process or data model enabling deeper insights
+
+Business users need a reliable way to:
+- Track deal performance across time
+- Evaluate pipeline trends
+- Support forecasting and opportunity management
+
+## About the Data
+**Source:** CRM Sales Deal Export (CSV originally stored in Google Sheets)  
+**Volume:** ~8,800 deal records  
+**Example fields include:** `product`, `account`, `close_date`, `revenue`, `deal_stage`
+
+This dataset was manually exported for pipeline demonstration due to Airbyte Cloud free-tier limitations.
+
+## 🛠️ Approach
+This solution implements a **modern ELT workflow**:
+
+1. **Ingest raw deal data** into Snowflake
+2. **Store raw untouched records** in a `RAW` schema
+3. **Create staging models** to standardize and type-cast fields
+4. **Build intermediate models** to aggregate key metrics
+5. **Deliver core analytical tables** for reporting
+
+## Pipeline Architecture
 ```mermaid
 flowchart LR
 
@@ -34,7 +71,6 @@ flowchart LR
   dbt_int --> dbt_core
   dbt_core --> analytics
 ```
-## Architecture Overview (High-Level Summary)
 
 - **Source**: CRM sales deal data exported from Google Sheets as CSV.
 
@@ -51,3 +87,4 @@ flowchart LR
 - **Analytics Layer**: Final transformed tables are ready for analysis and downstream BI dashboards.
 
 **Note:** Since Airbyte Cloud free tier tokens are short-lived and API triggering is restricted, this project uses a **manual sync via the Airbyte UI**. In a full production environment, I would automate the ingestion step using the Airbyte API within Prefect to trigger extraction and loading programmatically.
+
