@@ -5,7 +5,7 @@ The goal is to ingest raw CRM deal records, apply layered transformations, and p
 
 This project models a real-world workflow where raw operational data is centralized, standardized, and prepared for decision-making through automated data engineering patterns.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 **Orchestration:** Prefect  
 **Data Integration:** Airbyte (Cloud - manual sync)  
