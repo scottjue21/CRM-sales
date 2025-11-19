@@ -37,7 +37,7 @@ Business users need a reliable way to:
 
 This dataset was manually exported for pipeline demonstration due to Airbyte Cloud free-tier limitations.
 
-## 🛠️ Approach
+## Approach
 This solution implements a **modern ELT workflow**:
 
 1. **Ingest raw deal data** into Snowflake
