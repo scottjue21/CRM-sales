@@ -8,13 +8,12 @@ This project models a real-world workflow where raw operational data is centrali
 ## Tech Stack
 
 **Orchestration:** Prefect  
-**Data Integration:** Airbyte (Cloud - manual sync)  
+**Data Integration:** Airbyte (Cloud – manual sync due to trial limitations)  
 **Transformation:** dbt Core  
 **Warehouse:** Snowflake  
-**Storage Format:** CSV  
-**Language:** Python  
-**Environment:** Cursor IDE / Virtualenv  
-**Version Control:** Git + GitHub
+**Query Language:** SQL  
+**Scripting & Automation:** Python  
+**Version Control:** Git & GitHub
 
 ## Problem
 The CRM system exports deal records in a flat format that is not optimized for analytics.  
