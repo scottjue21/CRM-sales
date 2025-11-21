@@ -139,7 +139,6 @@ Below are screenshots demonstrating key components of the pipeline:
 ## Next Steps
 Planned enhancements include:
 - Automating ingestion using the Airbyte API and Prefect flow triggering
-- Implementing data quality tests in dbt (e.g., not-null, unique, accepted values)
 - Adding a dbt docs site for data lineage and documentation
 - Building a BI dashboard on top of the core models (e.g., Tableau/Power BI)
 - Enhancing Snowflake roles and orchestration patterns
