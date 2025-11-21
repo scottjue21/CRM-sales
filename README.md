@@ -117,7 +117,10 @@ Final analytical models include:
 - **Staging models**:
   - `stg_crm_deals` – Renames columns, type-casts fields, and standardizes values
 
-
+### Insights enabled:
+- Win rate trends across time
+- Product-level revenue performance
+- Pipeline conversion metrics
 Below are screenshots demonstrating key components of the pipeline:
 
 ### Prefect — Pipeline Orchestration
@@ -132,10 +135,6 @@ Below are screenshots demonstrating key components of the pipeline:
 ### Snowflake — Core Analytical Model Output
 ![Snowflake Core Table Preview](./assets/snowflake_core_model.png)
 
-### Insights enabled:
-- Win rate trends across time
-- Product-level revenue performance
-- Pipeline conversion metrics
 
 ## Next Steps
 Planned enhancements include:
