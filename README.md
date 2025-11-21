@@ -121,16 +121,16 @@ Final analytical models include:
 Below are screenshots demonstrating key components of the pipeline:
 
 ### Prefect — Pipeline Orchestration
-![Prefect Flow Run](./assets/screenshots/prefect_run.png)
+![Prefect Flow Run](./assets/prefect_run.png)
 
 ### Airbyte — Source to Snowflake Ingestion
-![Airbyte Sync Status](./assets/screenshots/airbyte_sync.png)
+![Airbyte Sync Status](./assets/airbyte_sync.png)
 
 ## dbt - Model Lineage
-![dbt Model Lineage](./assets/screenshots/dbt_lineage.png)
+![dbt Model Lineage](./assets/dbt_lineage.png)
 
 ### Snowflake — Core Analytical Model Output
-![Snowflake Core Table Preview](./assets/screenshots/snowflake_core_model.png)
+![Snowflake Core Table Preview](./assets/snowflake_core_model.png)
 
 ### Insights enabled:
 - Win rate trends across time
